@@ -131,12 +131,10 @@
 
 .cpu-turn {
     padding: 5px;
-    border-bottom: 4px solid #4286f4;
 }
 
 .grid-container {
     margin-top: 30px;
-    padding: 0 87.5px;
     text-align: center;
     display: grid;
     grid-template-columns: 100px 100px 100px;

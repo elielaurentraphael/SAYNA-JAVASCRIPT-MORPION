@@ -12,14 +12,31 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <title>MORPION</title>
+
 </head>
 
 <body>
 
-    <div class='container'>
-        <h1 class='name'>Tic-Tac-Toe</h1>
+    <div class="layer animated bounceInup">
+        <h1>choix de votre Team</h1>
+        <button id="X" class="choose1 btn" style="color: #4286f4" onclick="teamchoice(this.id)">X</button>
+        <button id="O" class="choose2 btn" style="color: #e29126" onclick="teamchoice(this.id)">O</button>
+    </div>
 
-        <div class='row range justify-content-center'>
+    <div class="layer2">
+        <h1 class="winner-name"></h1>
+        <button class="end-game" onclick="winnershow()">close</button>
+    </div>
+
+    <div class="layer3 animated bounceInDown">
+        <h1 class="draw-result">Match nul!</h1>
+        <button class="draw" onclick="matchnul()">Try again</button>
+    </div>
+
+    <div class='container'>
+        <h1 class='name'>Jeu Morpion</h1>
+
+        <div class='row range'>
             <div class='col-6 turn player-turn row'>
                 <div class='col-6 score you-score'>0</div>
                 <div class='col-6 you-name'>YOU</div>
@@ -31,9 +48,9 @@
         </div>
 
         <div class='grid-container'>
-            <button class='grid-item' id='item1' onclick='choiseCase(this.id)'>X</button>
-            <button class='grid-item' id='item2' onclick='choiseCase(this.id)'>O</button>
-            <button class='grid-item' id='item3' onclick="this.innerHTML='Ooops!'"></button>
+            <button class='grid-item' id='item1' onclick='choiseCase(this.id)'></button>
+            <button class='grid-item' id='item2' onclick='choiseCase(this.id)'></button>
+            <button class='grid-item' id='item3' onclick='choiseCase(this.id)'></button>
             <button class='grid-item' id='item4' onclick='choiseCase(this.id)'></button>
             <button class='grid-item' id='item5' onclick='choiseCase(this.id)'></button>
             <button class='grid-item' id='item6' onclick='choiseCase(this.id)'></button>
@@ -42,33 +59,13 @@
             <button class='grid-item' id='item9' onclick='choiseCase(this.id)'></button>
         </div>
 
-        <button type="button" class="btn btn-outline-success">start</button>
-        <button type="button" class="btn btn-outline-success" onclick='rest()'>reset</button>
-        <!--<button class='reset' onclick='rest()'>reset</button>-->
-
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-            <label class="btn btn-outline-primary" for="btnradio1">CROIX</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio2">ROND</label>
-        </div>
-
+        <button class="reset" onclick="reset()"><u>Reset</u></button>
 
     </div>
 
-    <script>
-        function rest() {
-            var items = document.getElementsByClassName("grid-item");
-            for (var i = 0; i < items.length; i++) {
-                console.log(items[i]);
-                items[i].textContent = ''
-            }
-        }
-    </script>
 
-    <script src="morpion.js"></script>
+    <script src="./morpion.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.3.1 /jquery.min.js "></script>
 
-</html>
+</body>
