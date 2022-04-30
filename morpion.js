@@ -97,7 +97,9 @@ function findElement(check) {
             winning(arr8);
             setTimeout(on, 700, check.name);
             break;
+
     }
+
 }
 
 success;
@@ -109,8 +111,12 @@ function choiseCase(clicked_id) {
         $('#' + clicked_id).html('<p class = "animated bounceIn" style = "font-size:2em;color:#4286f4;">' + player.team + '</p>')
         grid.splice(grid.indexOf(clicked_id), 1);
         player.arr.push(clicked_id);
-        findElement(player);
-        finished();
+        if (player.arr.length >= 3) {
+            findElement(player);
+        }
+        if (choice === 0) {
+            finished();
+        }
         $('.player-turn').css({ "border-bottom": "none" })
         $('.cpu-turn').css({ "border-bottom": "3px solid #e29126" })
         $('#' + clicked_id).prop("disabled", true);
@@ -127,8 +133,12 @@ function computer() {
     $('#' + res).html('<p class = "animated bounceIn" style = "font-size:2em;color:#e29126;">' + cpu.team + '</p>')
     cpu.arr.push(grid[ran]);
     grid.splice(grid.indexOf(res), 1);
-    findElement(cpu);
-    finished();
+    if (cpu.arr >= 3) {
+        findElement(cpu);
+    }
+    if (choice === 0) {
+        finished();
+    }
     $('#' + res).prop("disabled", true);
     $('.cpu-turn').css({ "border-bottom": "none" })
     $('.player-turn').css({ "border-bottom": "3px solid #e29126" })
@@ -163,7 +173,12 @@ function winning(valeur) {
         cpuScore++;
         $('.cpu-score').html(cpuScore);
     }
-    grid = [];
+    var item = document.getElementsByClassName('grid-item');
+    for (let i = 0; i < item.length; i++) {
+        item[i].onclick(function() {
+            item[i].prop("disabled", false);
+        });
+    }
 }
 
 
