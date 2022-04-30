@@ -1,12 +1,12 @@
 var grid = ['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9'];
-var arr1 = [];
-var arr2 = [];
-var arr3 = [];
-var arr4 = [];
-var arr5 = [];
-var arr6 = [];
-var arr7 = [];
-var arr8 = [];
+var arr1 = ['item1', 'item2', 'item3'];
+var arr2 = ['item4', 'item5', 'item6'];
+var arr3 = ['item7', 'item8', 'item9'];
+var arr4 = ['item1', 'item4', 'item7'];
+var arr5 = ['item2', 'item5', 'item8'];
+var arr6 = ['item3', 'item6', 'item9'];
+var arr7 = ['item1', 'item5', 'item9'];
+var arr8 = ['item3', 'item5', 'item7'];
 var success;
 var gameOver = false;
 var arr = [];
@@ -33,83 +33,76 @@ $('.you-score').html(playerScore);
 
 
 function findElement(check) {
-    arr1 = ['item1', 'item2', 'item3'];
-    arr2 = ['item4', 'item5', 'item6'];
-    arr3 = ['item7', 'item8', 'item9'];
-    arr4 = ['item1', 'item4', 'item7'];
-    arr5 = ['item2', 'item5', 'item8'];
-    arr6 = ['item3', 'item6', 'item9'];
-    arr7 = ['item1', 'item5', 'item9'];
-    arr8 = ['item3', 'item5', 'item7'];
+    switch (true) {
+        case success = arr1.every(function(val) {
+            return check.arr.indexOf(val) !== -1;
+        }):
+            gameOver = true;
+            winning(arr1);
+            setTimeout(on, 700, check.name);
+            break;
+
+        case success = arr2.every(function(val) {
+            return check.arr.indexOf(val) !== -1;
+        }):
+            gameOver = true;
+            winning(arr2);
+            setTimeout(on, 700, check.name);
+            break;
+
+        case success = arr3.every(function(val) {
+            return check.arr.indexOf(val) !== -1;
+        }):
+            gameOver = true;
+            winning(arr3);
+            setTimeout(on, 700, check.name);
+            break;
+
+        case success = arr4.every(function(val) {
+            return check.arr.indexOf(val) !== -1;
+        }):
+            gameOver = true;
+            winning(arr4);
+            setTimeout(on, 700, check.name);
+            break;
+
+        case success = arr5.every(function(val) {
+            return check.arr.indexOf(val) !== -1;
+        }):
+            gameOver = true;
+            winning(arr5);
+            setTimeout(on, 700, check.name);
+            break;
+
+        case success = arr6.every(function(val) {
+            return check.arr.indexOf(val) !== -1;
+        }):
+            gameOver = true;
+            winning(arr6);
+            setTimeout(on, 700, check.name);
+            break;
+
+        case success = arr7.every(function(val) {
+            return check.arr.indexOf(val) !== -1;
+        }):
+            gameOver = true;
+            winning(arr7);
+            setTimeout(on, 700, check.name);
+            break;
+
+        case success = arr8.every(function(val) {
+            return check.arr.indexOf(val) !== -1;
+        }):
+            gameOver = true;
+            winning(arr8);
+            setTimeout(on, 700, check.name);
+            break;
+    }
 }
 
 success;
 
-switch (true) {
-    case success = arr1.every(function(val) {
-        return check.arr.indexOf(val) !== -1;
-    }):
-        gameOver = true;
-        winning(arr1);
-        setTimeout(on, 700, check.name);
-        break;
 
-    case success = arr2.every(function(val) {
-        return check.arr.indexOf(val) !== -1;
-    }):
-        gameOver = true;
-        winning(arr2);
-        setTimeout(on, 700, check.name);
-        break;
-
-    case success = arr3.every(function(val) {
-        return check.arr.indexOf(val) !== -1;
-    }):
-        gameOver = true;
-        winning(arr3);
-        setTimeout(on, 700, check.name);
-        break;
-
-    case success = arr4.every(function(val) {
-        return check.arr.indexOf(val) !== -1;
-    }):
-        gameOver = true;
-        winning(arr4);
-        setTimeout(on, 700, check.name);
-        break;
-
-    case success = arr5.every(function(val) {
-        return check.arr.indexOf(val) !== -1;
-    }):
-        gameOver = true;
-        winning(arr5);
-        setTimeout(on, 700, check.name);
-        break;
-
-    case success = arr6.every(function(val) {
-        return check.arr.indexOf(val) !== -1;
-    }):
-        gameOver = true;
-        winning(arr6);
-        setTimeout(on, 700, check.name);
-        break;
-
-    case success = arr7.every(function(val) {
-        return check.arr.indexOf(val) !== -1;
-    }):
-        gameOver = true;
-        winning(arr7);
-        setTimeout(on, 700, check.name);
-        break;
-
-    case success = arr8.every(function(val) {
-        return check.arr.indexOf(val) !== -1;
-    }):
-        gameOver = true;
-        winning(arr8);
-        setTimeout(on, 700, check.name);
-        break;
-}
 
 function choiseCase(clicked_id) {
     if (clicked % 2 == 0) {
